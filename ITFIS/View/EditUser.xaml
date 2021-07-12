@@ -1,0 +1,38 @@
+﻿<Window x:Class="View.EditUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="ITFIS" Height="450" Width="400" Background="Azure" Icon="Images/logo.png" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBox Text="Jméno:"/>
+            <TextBox Text="Příjmení:" />
+            <TextBox Text="ID:" />
+            <TextBox Text="Password:" />
+            <TextBox Text="Role:" />
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="nameTextBox" />
+            <TextBox Name="surnameTextBox" />
+            <TextBox Name="idTextBox" />
+            <TextBox Name="passwordTextBox"/>
+            <ComboBox Name="roleComboBox" SelectedIndex="2">
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="ADMIN"/>
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="LECTOR"/>
+                <ComboBoxItem HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="USER"/>
+            </ComboBox>
+        </StackPanel>
+        <Button Name="confirmButton" Grid.Row="1" Grid.ColumnSpan="2" Content="POTVRĎ" Click="confirmButton_Click"/>
+    </Grid>
+</Window>

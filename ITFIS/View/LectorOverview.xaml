@@ -1,0 +1,133 @@
+﻿<UserControl x:Class="View.LectorOverview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Seznam studentů v kurzu" HorizontalAlignment="Center"/>
+            <ComboBox Name="courseComboBox" Grid.Row="1" SelectionChanged="coursesComboBox_SelectionChanged"/>
+            <ListBox Name="userListBox" Grid.Row="2" SelectionChanged="userListBox_SelectionChanged" Margin="0"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Hodnocení studenta" Grid.Row="0" HorizontalAlignment="Center"/>
+            <ListBox Name="classificationListBox" Grid.Row="1" Grid.RowSpan="2" Margin="0"/>
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1.5*"/>
+                <RowDefinition Height="2.5*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Název kurzu:" Grid.Row="0"/>
+                    <Label Content="Kapacita:" Grid.Row="1"/>
+                    <Label Name="courseNameLabel" Grid.Row="0" Grid.Column="1" Content="0"/>
+                    <Label Name="courseCapacityLabel" Grid.Row="1" Grid.Column="1" Content="0"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Jméno studenta:" Grid.Row="0"/>
+                    <Label Content="ID:" Grid.Row="1"/>
+                    <Label Name="registredUserNameLabel" Grid.Row="0" Grid.Column="1" Content="0"/>
+                    <Label Name="registredUserIDLabel" Grid.Row="1" Grid.Column="1" Content="0"/>
+                    <Button Name="removeUser" Grid.Row="2" Content="ODEBER STUDENTA" Click="removeUser_Click"/>
+                </Grid>
+            </Border>
+            <Border Grid.Row="2" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Name="userComboBox" Grid.Row="0" Height="25" SelectionChanged="userComboBox_SelectionChanged"/>
+                    <Label Content="Jméno studenta:" Grid.Row="1"/>
+                    <Label Content="ID:" Grid.Row="2"/>
+                    <Label Name="newUserNameLabel" Grid.Row="1" Grid.Column="1" Content="0" Grid.ColumnSpan="2"/>
+                    <Label Name="newUserIDLabel" Grid.Row="2" Grid.Column="1" Content="0" Grid.ColumnSpan="2"/>
+                    <Button Name="addUser" Grid.Row="3" Content="PŘIDEJ STUDENTA" Click="addUser_Click"/>
+                </Grid>
+            </Border >
+        </Grid>
+        <Border Grid.Row="2" Grid.Column="1" Margin="5">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Grid.Column="0" Grid.Row="0">
+                    <Label Content="Jméno studenta:"/>
+                    <Label Content="ID"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1" Grid.Row="0">
+                    <Label Name="selectedUserNameLabel" Content="0"/>
+                    <Label Name="selectedUserIDLabel" Content="0"/>
+                </StackPanel>
+                <Label Grid.Row="1" Content="Vyber hodnocení" VerticalContentAlignment="Center"/>
+                <ComboBox Name="gradeComboBox" Grid.Row="1" Grid.Column="1" Height="25" Width="50" SelectedIndex="0" HorizontalAlignment="Left">
+                    <ComboBoxItem Content="A"/>
+                    <ComboBoxItem Content="B"/>
+                    <ComboBoxItem Content="C"/>
+                    <ComboBoxItem Content="D"/>
+                    <ComboBoxItem Content="E"/>
+                    <ComboBoxItem Content="F"/>
+                </ComboBox>
+                <Button Name="addClassificationButton"  Grid.Column="0" Grid.Row="2" Content="PŘIDEJ HODNOCENÍ" Click="addClassificationButton_Click"/>
+                <Button Name="removeClassificationButton" Grid.Column="1" Grid.Row="2" Content="ODEBER HODNOCENÍ" Click="removeClassificationButton_Click"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

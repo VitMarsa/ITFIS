@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="View.AdminCourseControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Margin="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="courseListBox" SelectionChanged="courseListBox_SelectionChanged"/>
+        <StackPanel Grid.Column="1" Margin="5">
+            <Label Content="Název kurzu:"/>
+            <Label Content="Lektor:"/>
+            <Label Content="Kapacita:"/>
+            <Label Content="Popis:"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Margin="5">
+            <Label Name="nameLabel" />
+            <Label Name="lectorLabel" />
+            <Label Name="capacityrLabel" />
+        </StackPanel>
+        <TextBox Name="descriptionTextBox" Grid.Column="1" Grid.ColumnSpan="2"  Margin="5,120,5,5" IsReadOnly="True"/>
+        <Button Name="changeCourseButton" Grid.Column="0" Grid.Row="1" Content="UPRAV KURZ" Click="changeCourseButton_Click"/>
+        <Button Name="addCourseButton" Grid.Column="1" Grid.Row="1" Content="PŘIDEJ KURZ" Click="addCourseButton_Click"/>
+        <Button Name="deleteCourseButton" Grid.Column="2" Grid.Row="1" Content="ODEBER KURZ" Click="deleteCourseButton_Click"/>
+    </Grid>
+</UserControl>

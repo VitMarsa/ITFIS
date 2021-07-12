@@ -1,0 +1,14 @@
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\ITFISDB.mdf
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\ITFISDB_log.ldf
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\ITFIS.exe.config
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\ITFIS.exe
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\ITFIS.pdb
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\EntityFramework.dll
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\EntityFramework.xml
+D:\Programování\Vlastní\ITFIS\ITFIS\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programování\Vlastní\ITFIS\ITFIS\obj\Debug\ITFIS.csproj.CoreCompileInputs.cache
+D:\Programování\Vlastní\ITFIS\ITFIS\obj\Debug\ITFIS.csproj.CopyComplete
+D:\Programování\Vlastní\ITFIS\ITFIS\obj\Debug\ITFIS.exe
+D:\Programování\Vlastní\ITFIS\ITFIS\obj\Debug\ITFIS.pdb
+D:\Programování\Vlastní\ITFIS\ITFIS\obj\Debug\ITFIS.csproj.AssemblyReference.cache

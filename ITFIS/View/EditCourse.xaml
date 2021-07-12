@@ -1,0 +1,33 @@
+﻿<Window x:Class="View.EditCourse"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="ITFIS" Height="400" Width="600" Background="Azure" Icon="Images/logo.png" WindowStartupLocation="CenterScreen">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <TextBox Text="Název kurzu:" Margin="0,10,0,0" IsReadOnly="True"/>
+            <TextBox Text="Lektor:" Margin="0,10,0,0" IsReadOnly="True"/>
+            <TextBox Text="Kapacita:" Margin="0,10,0,0" IsReadOnly="True"/>
+            <TextBox Text="Popis:" Margin="0,10,0,0" IsReadOnly="True"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBox Name="nameTextBox"  Margin="0,10,0,0"/>
+            <ComboBox Name="lectorComboBox" Margin="0,10,0,0"/>
+            <TextBox Name="capacityTextBox" Margin="0,7,0,0"/>
+        </StackPanel>
+        <TextBox Name="descriptionTextBox" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="5,125,5,5" TextWrapping="Wrap"/>
+        <Button Name="confirmButton" Grid.Row="1" Grid.ColumnSpan="2"  
+                Content="POTVRĎ" Click="confirmButton_Click"/>
+    </Grid>
+</Window>
